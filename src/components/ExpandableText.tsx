@@ -6,6 +6,7 @@ interface Props {
 }
 
 const ExpandableText = ({ maxLength, children }: Props) => {
+  if (children.length <= maxLength) return <p>{children}</p>
   const [collapsed, setCollapsed] = useState(false);
   const textList = children.split("");
   const shortenedText = textList.map((item, index) => {
