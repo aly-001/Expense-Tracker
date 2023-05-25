@@ -17,9 +17,9 @@ function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
   return (
     <div>
-      {alertVisible && <Alert onClose={()=>setAlertVisibility(false)}><strong>Holy Shit!</strong> You just got an alert!</Alert>}
+      {alertVisible && <Alert onClick={()=>setAlertVisibility(false)}><strong>Holy Shit!</strong> You just clicked the button!</Alert>}
       <Button color="primary" onClick={()=>setAlertVisibility(!alertVisible)}>
-        Get an alert.
+        Don't click me.
       </Button>
     </div>
   );
