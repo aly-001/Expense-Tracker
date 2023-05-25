@@ -1,5 +1,6 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   let items = [
@@ -16,6 +17,7 @@ function App() {
       <Alert>
         Alert! <div className="box">Hello!</div>
       </Alert>
+      <Button text="Primary!" />
     </div>
   );
 }
