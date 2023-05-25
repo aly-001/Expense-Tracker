@@ -7,7 +7,9 @@ import Message from "../Message";
 /* Configure the shape of the form */
 const schema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
-  age: z.number( {invalid_type_error: "Age field is required."} ).min(18, { message: "You must be at least 18 years old."}),
+  age: z
+    .number({ invalid_type_error: "Age field is required." })
+    .min(18, { message: "You must be at least 18 years old." }),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -54,7 +56,7 @@ const Form = () => {
           <p className="text-danger">{errors.age.message}</p>
         )}
       </div>
-      <button disabled={!isValid}className="btn btn-primary" type="submit">
+      <button disabled={!isValid} className="btn btn-primary" type="submit">
         Submit
       </button>
     </form>
