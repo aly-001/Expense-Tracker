@@ -1,29 +1,14 @@
-// we need to be able to dynamically provide the text
-// for this, let's define the shape of the props class as an interface:
-
-import { ReactNode } from "react"
-
-/* interface Props {
-    text: string;
-} */
-
-// Let's use the 'children' variable to be able to use childen: <Alert>some children</Alert>
-
-/* interface Props {
-    children: string;
-} */
-
-// Almost there! Now, let's change the type of 'children' so we can have markup as children.
+import { ReactNode } from "react";
 
 interface Props {
-    children: ReactNode
+  children: ReactNode;
+  onClick?: () => void;
 }
 
-// Let's pass a Props-able to our Alert function
-const Alert = ( { children } : Props) => {
-  return (
-    <div className="alert alert-primary">{ children }</div>
-  )
-}
+const Alert = ({ children, onClick }: Props) => {
+  return (<div className="alert alert-warning alert-dismissible fade show" role="alert">{children}
+  <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={onClick}></button>
+</div>);
+};
 
-export default Alert
+export default Alert;
