@@ -7,7 +7,7 @@ function ListGroup() {
     "Philadelphia",
     "Boston",
   ];
-
+  const handleClick =  (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {console.log(event)} 
   return (
     <>
       <h1>Cities</h1>
@@ -17,7 +17,7 @@ function ListGroup() {
           <li
             className="list-group-item"
             key={item}
-            onClick={() => console.log("Clicked")}
+            onClick={handleClick}
           >
             {item}
           </li>
