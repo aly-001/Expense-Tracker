@@ -13,7 +13,6 @@ function App() {
     "Boston",
   ];
   const handleSelectedItem = (item: string) => console.log(item);
-<<<<<<< Updated upstream
   const [alertVisible, setAlertVisibility] = useState(false);
   return (
     <div>
@@ -23,9 +22,6 @@ function App() {
       </Button>
     </div>
   );
-=======
-  return <div><ListGroup items={items} heading="Cities" onSelectedItem={alert}/></div>
->>>>>>> Stashed changes
 }
 
 export default App;
